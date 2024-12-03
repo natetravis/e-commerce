@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Shopify Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            color: #333;
+        }
+
+        .animated-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+            animation: gradientAnimation 15s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        header {
+            background-color: rgba(70, 130, 180, 0.9);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        header nav {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        header .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        header .header-right input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        header .header-right a {
+            margin-left: 10px;
+        }
+
+        .contact-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .contact-header p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .contact-details,
+        .contact-form {
+            width: 100%;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .contact-details h2,
+        .contact-form h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .contact-details p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        .contact-details .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .contact-details .social-icons a {
+            color: #4682b4;
+            font-size: 24px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form label {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        .contact-form button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #4682b4;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="animated-background"></div>
+    <header>
+        <div class="logo">Shopify Store</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="deals.html">Deals</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="header-right">
+            <input type="text" placeholder="Search...">
+            <a href="#">Cart</a>
+            <a href="#">Account</a>
+        </div>
+    </header>
+
+    <div class="contact-page">
+        <div class="contact-header">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you! Reach out to us via any of the methods below.</p>
+        </div>
+
+        <div class="contact-details">
+            <h2>Our Office</h2>
+            <p>123 Shopify Street</p>
+            <p>Shopify City, SH 12345</p>
+            <p>Email: contact@shopify.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <div class="social-icons">
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

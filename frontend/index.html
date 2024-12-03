@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+            color: #333;
+        }
+
+        .animated-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+            animation: gradientAnimation 15s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        header {
+            background-color: rgba(70, 130, 180, 0.9);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        header nav {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        header .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        header .header-right input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        header .header-right a {
+            margin-left: 10px;
+        }
+
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 20px;
+        }
+
+        .hero button {
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            background-color: #4682b4;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .products {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .products h2 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .product-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+
+        .product-card {
+            flex: 0 0 auto;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            width: 200px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .product-card p {
+            font-size: 16px;
+            color: #4682b4;
+        }
+
+        .product-card button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #4682b4;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .slider-controls {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .slider-controls button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background-color: #4682b4;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="animated-background"></div>
+    <header>
+        <div class="logo">Shopify Store</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="deals.html">Deals</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+        <div class="header-right">
+            <input type="text" placeholder="Search...">
+            <a href="cart.html">Cart</a>
+            <a href="#">Account</a>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>Huge Savings on UHD Televisions</h1>
+        <p>Save up to 70% on selected items</p>
+        <button>Shop Now</button>
+        <button>Discover More</button>
+    </div>
+
+    <div class="products">
+        <h2>Featured Products</h2>
+        <div class="product-slider" id="product-slider">
+            <div class="product-card" data-name="Smartphone" data-price="499.99">
+                <img src="./sony.jpg" width="200" height="155.4" alt="Smartphone">
+                <h3>Smartphone</h3>
+                <p>$499.99</p>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-card" data-name="Laptop" data-price="899.99">
+                <img src="./laptop.jpg" width="200" height="155.4" alt="Laptop">
+                <h3>Laptop</h3>
+                <p>$899.99</p>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-card" data-name="Tablet" data-price="299.99">
+                <img src="./tablet.jpg" width="200" height="155.4" alt="Tablet">
+                <h3>Tablet</h3>
+                <p>$299.99</p>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-card" data-name="Smartwatch" data-price="199.99">
+                <img src="./watch.jpg" width="200" height="155.4" alt="Smartwatch">
+                <h3>Smartwatch</h3>
+                <p>$199.99</p>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-card" data-name="Headphones" data-price="149.99">
+                <img src="./headphones1.jpg" width="200" height="155.4" alt="Headphones">
+                <h3>Headphones</h3>
+                <p>$149.99</p>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-card" data-name="Camera" data-price="599.99">
+                <img src="./camera.jpg" alt="Camera">
+                <h3>Camera</h3>
+                <p>$599.99</p>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button onclick="scrollSlider(-1)">Previous</button>
+            <button onclick="scrollSlider(1)">Next</button>
+        </div>
+    </div>
+
+    <script>
+        function addToCart(button) {
+            const productCard = button.parentElement;
+            const productName = productCard.getAttribute('data-name');
+            const productPrice = productCard.getAttribute('data-price');
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const productIndex = cart.findIndex(product => product.name === productName);
+
+            if (productIndex > -1) {
+                cart[productIndex].quantity += 1;
+            } else {
+                cart.push({ name: productName, price: parseFloat(productPrice), quantity: 1 });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Product added to cart');
+        }
+
+        function scrollSlider(direction) {
+            const slider = document.getElementById('product-slider');
+            const scrollAmount = direction * 220;
+            slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>
